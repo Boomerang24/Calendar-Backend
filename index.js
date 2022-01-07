@@ -19,8 +19,10 @@ app.use( express.static('public')); // "use" es como un middleware, es una funci
 app.use( express.json() );
 
 // Routes
+app.use('/login', express.static('public')); // convierte la ruta "/login" como ruta estatica
+
 app.use( '/api/auth', require('./routes/auth') );
-// TODO: CRUD: Eventos
+// CRUD: Eventos
 app.use( '/api/events', require('./routes/events') );
 
 
